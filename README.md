@@ -16,7 +16,7 @@ Trampoline is a chrome extension boilerplate code to showcase your own Smart Con
    1. Go to `chrome://extensions/`
    2. Enable `Developer mode`
    3. Click on `Load unpacked extension`
-   4. Select the `build` folder.
+   4. Select the `build` directory.
 8. Happy hacking.
 
 > **Warning**
@@ -110,16 +110,16 @@ Config of the extension can be set in `excnfig.json` file.
 
 ## Wallet Structure
 
-All your extension's account code must be placed in the `src/pages/Account` folder.
+All your extension's account code must be placed in the `src/pages/Account` directory.
 
-There are two subfolders in `src/pages/Account`:
+There are two subdirectories in `src/pages/Account`:
 
 - account-api
 - components
 
-### account-api folder
+### account-api directory
 
-This folder is used to define the `AccountAPI` of your specific account implementation. Every implementation must implement `AccountApiType`.
+This directory is used to define the `AccountAPI` of your specific account implementation. Every implementation must implement `AccountApiType`.
 
 ```typescript
 export abstract class AccountApiType extends BaseAccountAPI {
@@ -163,15 +163,15 @@ export declare abstract class BaseAccountAPI {
 
 The boilerplate includes a SimpleAccount Implementation by Eth-Infinitism, which you can find [here](https://github.com/eth-infinitism/bundler/blob/main/packages/sdk/src/SimpleAccountAPI.ts).
 
-### components folder
+### components directory
 
-This folder is used to define the components that will be used in the Chrome extension. This folder should contain two subfolders.
+This directory is used to define the components that will be used in the Chrome extension. This directory should contain two subdirectories.
 
 - onboarding
 - sign-message
 - transaction
 
-The `onboarding` folder defines the component that will be displayed to the user during the creation of a new wallet. You can display custom information or collect user inputs if needed.
+The `onboarding` directory defines the component that will be displayed to the user during the creation of a new wallet. You can display custom information or collect user inputs if needed.
 
 The signature of the `OnboardingComponent` is defined as follows.
 
@@ -198,7 +198,7 @@ export type AccountImplementationType = new (
 ) => AccountApiType;
 ```
 
-The `sign-message` folder defines the component that will be displayed to the user whenever the dapp requests the user to sign any message, i.e. dapp calls `personal_sign` RPC method. You can display custom information or collect user inputs if needed.
+The `sign-message` directory defines the component that will be displayed to the user whenever the dapp requests the user to sign any message, i.e. dapp calls `personal_sign` RPC method. You can display custom information or collect user inputs if needed.
 
 The signature of the `SignMessageComponenet` is defined as follows.
 
@@ -223,7 +223,7 @@ The signature of the `signMessage` is as follows, which shows how the `context` 
   ) => Promise<string>;
 ```
 
-The `transaction` folder defines the component that will be displayed to the user whenever the dapp requests to initiate a transaction, i.e. dapp calls `eth_sendTransaction` RPC method. You can display custom information or collect user inputs if needed.
+The `transaction` directory defines the component that will be displayed to the user whenever the dapp requests to initiate a transaction, i.e. dapp calls `eth_sendTransaction` RPC method. You can display custom information or collect user inputs if needed.
 
 The signature of the `TransactionComponent` is defined as follows.
 
