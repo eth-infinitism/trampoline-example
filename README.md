@@ -76,7 +76,7 @@ Config of the extension can be set in `excnfig.json` file.
 
 ### Local Network
 
-1. Run a local hardhat node with `npx hardhat node` or use the node inside the bundler repo.
+1. Run a local [Hardhat Network node](https://hardhat.org/hardhat-network/docs/overview) node with `npx hardhat node` or use the node inside the bundler repo.
 2. Deploy EntryPoint from [the infinitism repo](https://github.com/eth-infinitism/account-abstraction), you can find the instructions [below](#how-to-deploy-entrypoint-locally).
 3. Edit the `entryPointAddress` in `src/exconfig.ts`.
 4. Deploy the factory using `npx hardhat deploy --network localhost`.
@@ -98,7 +98,7 @@ Config of the extension can be set in `excnfig.json` file.
 2. Run `yarn install` to install the dependencies.
 3. Run `yarn preprocess` to compile all the local dependencies.
 4. Edit `bundler.config.json` at `packages/bundler/localconfig`:
-   a. Edit `network` to your local hardhat node.
+   a. Set `network` to the address of your local Hardhat Network node.
    b. Edit the `entryPoint` address that you got while deploying it using instructions above.
    c. Make sure your mnemonic & beneficiary are set up correctly.
 5. Run the bundler using `yarn bundler --unsafe --port 9000 --auto`.
