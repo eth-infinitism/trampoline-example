@@ -8,7 +8,7 @@ Trampoline is a Chromium extension boilerplate code to showcase your own Smart C
 
 1. Verify that your [Node.js](https://nodejs.org/) version is >= **18.12.0**.
 2. Clone this repository.
-3. Make sure you configure the `provider` in `src/exconfig.ts` to the `Goerli` network.
+3. Configure the `provider` in `src/exconfig.ts` to the `Goerli` network.
 4. Edit the `bundler` URL pointing to `Goerli` network and accepting EntryPoint=`0x0576a174D229E3cFA37253523E645A78A0C91B57`
 5. Run `yarn install` to install the dependencies.
 6. Run `yarn start`.
@@ -100,7 +100,7 @@ Config of the extension can be set in `excnfig.json` file.
 4. Edit `bundler.config.json` at `packages/bundler/localconfig`:
    a. Set `network` to the address of your local Hardhat Network node.
    b. Edit the `entryPoint` address that you got while deploying it using instructions above.
-   c. Make sure your mnemonic & beneficiary are set up correctly.
+   c. Make sure your mnemonic & beneficiary are setup correctly.
 5. Run the bundler using `yarn bundler --unsafe --port 9000 --auto`.
 
 ---
@@ -259,11 +259,7 @@ If you want you can also attach a paymaster here if your wallet wants to sponsor
 
 ### Is the password screen mandatory?
 
-<<<<<<< HEAD
-No you can disable that by setting `enablePasswordEncryption` flag to `false` in `exconfig.ts`.
-=======
-No. You can disable that by setting `enablePasswordEncryption` flag to `false` in `exconfig.json`.
->>>>>>> 5b4ef04 (README: Normalize punctuation, titles, and casing)
+No. You can disable that by setting the `enablePasswordEncryption` flag to `false` in `exconfig.ts`.
 
 > **Warning:** the local storage will be unencrypted and your wallet must return an encrypted state when `serialize` function of `account-api` willo be called or else the user's fund will be at risk.
 
