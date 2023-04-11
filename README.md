@@ -1,8 +1,8 @@
 <img src="src/assets/img/logo.png" width="260"/>
 
-Trampoline is a chrome extension boilerplate code to showcase your own Smart Contract Wallets with React 18 and Webpack 5 support.
+Trampoline is a Chromium extension boilerplate code to showcase your own Smart Contract Wallets with React 18 and Webpack 5 support.
 
-## Installation and Running
+## Installing and Running
 
 ### Steps:
 
@@ -11,13 +11,13 @@ Trampoline is a chrome extension boilerplate code to showcase your own Smart Con
 3. Make sure you configure the `provider` in `src/exconfig.ts` to the `Goerli` network.
 4. Edit the `bundler` URL pointing to `Goerli` network and accepting EntryPoint=`0x0576a174D229E3cFA37253523E645A78A0C91B57`
 5. Run `yarn install` to install the dependencies.
-6. Run `yarn start`
+6. Run `yarn start`.
 7. Load your extension in Chrome by following these steps:
-   1. Go to `chrome://extensions/`
-   2. Enable `Developer mode`
-   3. Click on `Load unpacked extension`
+   1. Go to `chrome://extensions/`.
+   2. Enable `Developer mode`.
+   3. Click on `Load unpacked extension`.
    4. Select the `build` directory.
-8. Happy hacking.
+8. Happy hacking!
 
 > **Warning**
 > Auto refresh is disabled by default, so you will have to manually refresh the page.
@@ -68,11 +68,11 @@ Config of the extension can be set in `excnfig.json` file.
 
 1. Make sure EntryPoint is deployed on the target network.
 2. Edit the `entryPointAddress` in `src/exconfig.ts`.
-3. Add your network details in `hardhat.condig.ts`.
+3. Add your network details in `hardhat.config.ts`.
 4. Deploy the factory using `INFURA_ID=<required> npx hardhat deploy --network <network>`.
-5. Edit the `factory_address` in `src/exconfig.ts`
-6. Edit the `bundler` url in `src/exconfig.ts` that points to your network and accepts requests for your EntryPoint.
-7. Run `yarn start`
+5. Change the `factory_address` in `src/exconfig.ts` to the address of the newly deployed factory.
+6. Edit the `bundler` value in `src/exconfig.ts` to a URL that exposes JSON-RPC access to interact with your depoloyed EntryPoint.
+7. Run `yarn start`.
 
 ### Local Network
 
@@ -80,33 +80,34 @@ Config of the extension can be set in `excnfig.json` file.
 2. Deploy EntryPoint from [the infinitism repo](https://github.com/eth-infinitism/account-abstraction), you can find the instructions [below](#how-to-deploy-entrypoint-locally).
 3. Edit the `entryPointAddress` in `src/exconfig.ts`.
 4. Deploy the factory using `npx hardhat deploy --network localhost`.
-5. Edit the `factory_address` in `src/exconfig.ts`
-6. Start a local bunder from [the infinitism repo](https://github.com/eth-infinitism/bundler), you can find the instructions [below](#how-to-run-bundler-locally).
-7. Edit the `bundler` to `http://localhost:9000/rpc` url in `src/exconfig.ts` that points to your network and accepts requests for your EntryPoint.
-8. Run `yarn start`
+5. Change the `factory_address` in `src/exconfig.ts` to the address of the newly deployed factory.
+6. Start a local bundler from [the infinitism repo](https://github.com/eth-infinitism/bundler) listening on port `9000`. Instructions are [below](#how-to-run-bundler-locally).
+7. Change the `bundler` to `http://localhost:9000/rpc` url in `src/exconfig.json` that points to your network and accepts requests for your EntryPoint.
+6. Edit the `bundler` value in `src/exconfig.ts` to `http://localhost:9000/rpc`.
+8. Run `yarn start`.
 
-### How to deploy EntryPoint Locally
+### Deploying EntryPoint locally
 
-1. Clone the repo https://github.com/eth-infinitism/account-abstraction
+1. Clone [https://github.com/eth-infinitism/account-abstraction](https://github.com/eth-infinitism/account-abstraction).
 2. Run `yarn install` to install the dependencies.
-3. Deploy EntryPoint with `DEBUG=true MNEMONIC_FILE=<path-to-mnemonic-file> yarn deploy --network dev`
+3. Deploy EntryPoint with `DEBUG=true MNEMONIC_FILE=<path-to-mnemonic-file> yarn deploy --network dev`.
 
-### How to run bundler Locally
+### Running bundler locally
 
-1. Clone the repo https://github.com/eth-infinitism/bundler
+1. Clone [https://github.com/eth-infinitism/bundler](https://github.com/eth-infinitism/bundler).
 2. Run `yarn install` to install the dependencies.
 3. Run `yarn preprocess` to compile all the local dependencies.
 4. Edit `bundler.config.json` at `packages/bundler/localconfig`:
-   a. Edit `network` to your local hardhat node
+   a. Edit `network` to your local hardhat node.
    b. Edit the `entryPoint` address that you got while deploying it using instructions above.
-   c. Make sure your mnemonic & beneficiary are setup correctly.
-5. Run the bunder using `yarn bundler --unsafe --auto`
+   c. Make sure your mnemonic & beneficiary are set up correctly.
+5. Run the bundler using `yarn bundler --unsafe --port 9000 --auto`.
 
 ---
 
 ## Extension Structure
 
-1. You can change the icons at `src/assets/img/icon-34.png` and `src/assets/img/icon-128.png` for the chrome extension.
+1. You can change the icons at `src/assets/img/icon-34.png` and `src/assets/img/icon-128.png` for the Chromium extension.
 
 ## Wallet Structure
 
@@ -258,7 +259,11 @@ If you want you can also attach a paymaster here if your wallet wants to sponsor
 
 ### Is the password screen mandatory?
 
+<<<<<<< HEAD
 No you can disable that by setting `enablePasswordEncryption` flag to `false` in `exconfig.ts`.
+=======
+No. You can disable that by setting `enablePasswordEncryption` flag to `false` in `exconfig.json`.
+>>>>>>> 5b4ef04 (README: Normalize punctuation, titles, and casing)
 
 > **Warning:** the local storage will be unencrypted and your wallet must return an encrypted state when `serialize` function of `account-api` willo be called or else the user's fund will be at risk.
 
@@ -266,7 +271,7 @@ No you can disable that by setting `enablePasswordEncryption` flag to `false` in
 
 If you want to show a custom screen then you must present it to the user in `TransactionComponent` and set `showTransactionConfirmationScreen` to `false`.
 
-### How do I, as a wallet provider attach a custom paymaster?
+### How do I, as a wallet provider, attach a custom paymaster?
 
 You must return the paymaster information in the `userOp` constructed by the function `createUnsignedUserOp`.
 
