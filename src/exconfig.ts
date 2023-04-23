@@ -11,7 +11,7 @@ export default {
     provider: 'https://goerli.infura.io/v3/bdabe9d2f9244005af0f566398e648da',
     entryPointAddress: '0x0576a174D229E3cFA37253523E645A78A0C91B57',
     bundler:
-      'https://node.stackup.sh/v1/rpc/420c8ba682cabe5ab405980e35c9b218af18f4702c46aaec4627ba9050fcc4ee',
+      'https://node.stackup.sh/v1/rpc/6b17b6a47ec9df3bb1372468d52f530448b9e2939ec43c9128f558d35118b9c2',
     baseAsset: {
       symbol: 'ETH',
       name: 'ETH',
