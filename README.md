@@ -36,7 +36,7 @@ Trampoline is a Chromium extension boilerplate code to showcase your own Smart C
 
 ## Config
 
-Config of the extension can be set in `excnfig.json` file.
+Config of the extension can be set in `exconfig.ts` file.
 
 ```json
 {
@@ -82,7 +82,7 @@ Config of the extension can be set in `excnfig.json` file.
 4. Deploy the factory using `npx hardhat deploy --network localhost`.
 5. Change the `factory_address` in `src/exconfig.ts` to the address of the newly deployed factory.
 6. Start a local bundler from [the infinitism repo](https://github.com/eth-infinitism/bundler) listening on port `9000`. Instructions are [below](#how-to-run-bundler-locally).
-7. Change the `bundler` to `http://localhost:9000/rpc` url in `src/exconfig.json` that points to your network and accepts requests for your EntryPoint.
+7. Change the `bundler` to `http://localhost:9000/rpc` url in `src/exconfig.ts` that points to your network and accepts requests for your EntryPoint.
 6. Edit the `bundler` value in `src/exconfig.ts` to `http://localhost:9000/rpc`.
 8. Run `yarn start`.
 
